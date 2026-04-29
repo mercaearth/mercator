@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    name: Build & test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Sui CLI
+        env:
+          # Pin a Sui release. Bump when the upstream toolchain moves.
+          # Asset pattern: sui-${SUI_VERSION}-ubuntu-x86_64.tgz
+          SUI_VERSION: testnet-v1.44.3
+        run: |
+          set -euo pipefail
+          curl -fL "https://github.com/MystenLabs/sui/releases/download/${SUI_VERSION}/sui-${SUI_VERSION}-ubuntu-x86_64.tgz" -o sui.tgz
+          tar -xzf sui.tgz
+          sudo install -m 0755 sui /usr/local/bin/sui
+          sui --version
+
+      - name: Build
+        run: sui move build --path . --lint
+
+      - name: Test
+        run: sui move test --path . -i 10000000000

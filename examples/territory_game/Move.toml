@@ -1,0 +1,11 @@
+[package]
+name = "territory_game"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "16bf4d124ac5d9fbe9314552d02cfdf55e30d377" }
+mercator = { local = "../.." }
+
+[addresses]
+territory_game = "0x0"

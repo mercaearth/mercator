@@ -1,0 +1,19 @@
+{
+  "name": "mercator-bench",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "publish": "tsx src/publish.ts",
+    "bench": "tsx src/bench.ts",
+    "all": "npm run publish && npm run bench"
+  },
+  "dependencies": {
+    "@mysten/sui": "^2.9.1",
+    "dotenv": "^17.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4.21.0",
+    "typescript": "^5"
+  }
+}

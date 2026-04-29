@@ -1,0 +1,16 @@
+[package]
+name = "mercator"
+version = "0.1.0"
+edition = "2024"
+license = "Apache-2.0"
+authors = ["Mercator Protocol"]
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "16bf4d124ac5d9fbe9314552d02cfdf55e30d377" }
+
+[addresses]
+mercator = "0x0"
+
+[dev-dependencies]
+
+[dev-addresses]
