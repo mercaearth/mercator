@@ -1,5 +1,7 @@
 # Mercator
 
+[![CI](https://github.com/mercaearth/mercator/actions/workflows/ci.yml/badge.svg)](https://github.com/mercaearth/mercator/actions/workflows/ci.yml)
+
 On-chain spatial uniqueness primitive for Sui. SAT collision detection + quadtree indexing + Morton encoding, all in Move.
 
 Register non-overlapping polygon regions in a shared spatial index. Build whatever you want on top.
